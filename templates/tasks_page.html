@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='tasks_page.css')}}">
+    <script src="{{ url_for('static', filename='tasks_page.js') }}"></script>
+    <title>Task Manager</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <div class="name">{{ name }}</div>
+            <div class="email">{{ email}}</div>
+        </div>
+        <div class="menu">
+            <div class="menu-item">My Day</div>
+            <div class="menu-item">Planned</div>
+            <div class="menu-item">Tasks</div>
+        </div>
+        <div class="new-list">
+            New list
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h1>My Day</h1>
+        </div>
+        <div class="task-list">
+            {% for task in tasks %}
+                <div class="task-item" id="{{ task._id }}" style="display: flex; gap: 10px;">
+                    <span class="span-item">{{ task.task }}</span>
+                    <button class="delete-btn" onclick="deleteTask('{{ task._id }}')">Delete</button>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="task-input-container">
+            <form action="{{ url_for('add_task') }}" method="POST" style="display: flex; gap: 10px;">
+                <input class="task-input" type="text" name="task" placeholder="Enter Task" required>
+                <button class="add-btn" type="submit">Add</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
