@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+.sidebar {
+    position: sticky;
+    width: 250px;
+    background-color: #f8f8f8;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.profile {
+    height: 10%;
+    width: 100%;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+}
+.name {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.email {
+    font-size: 12px;
+    color: gray;
+}
+
+.menu {
+    margin-top: -200px;
+}
+
+.menu-item {
+    padding: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-item:hover {
+    background-color: rgb(176, 176, 240);
+    border: 1px solid darkslateblue;
+    border-radius: 5px;
+}
+
+.new-list {
+    padding: 8px;
+    cursor: pointer;
+    border-top: 1px solid #ddd;
+    font-weight: bold;
+}
+.new-list:hover{
+    background-color: rgb(176, 176, 240);
+    border: 1px solid darkslateblue;
+    border-radius: 5px;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(#88c, #f8f8f8);
+    min-height: 100vh; /* fills entire viewport */
+    box-sizing: border-box;
+    width: calc(100% - 250px);
+    padding-left: 30px;
+}
+
+.header {
+    flex-shrink: 0;
+    height: 60px;
+}
+.task-list {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 70px;
+}
+.task-item {
+    margin-top: 15px;
+    width: 90%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+}
+.task-item:hover {
+    cursor: pointer;
+    border-color: darkslateblue;
+}
+.task-item .span-item {
+    width: 90%;
+}
+.delete-btn {
+    width: 60px;
+    background: #88c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.delete-btn:hover {
+    background: darkslateblue;
+    color: white;
+}
+.task-input-container {
+    position: fixed; /* stays in place */
+    bottom: 10px;
+    left: 271px; /* sidebar width so it doesn’t overlap */
+    right: 300px;
+    background: #f8f8f8; /* give it a background so it doesn’t overlap tasks visually */
+    border-top: 1px solid #ddd;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    width: 90%;
+}
+.task-input {
+    width: 700px;
+}
+.task-input-container .add-btn {
+    width: 8%;
+    height: 25px;
+}
